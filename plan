@@ -1,0 +1,39 @@
+Members:  
+Grace Baeurle (group leader) 
+Zach Kaiser 
+Othman Al Taie  
+Alexa Schuijt 
+Brayden Oathout 
+
+
+Mad libs/fill in the blank (with different themes) 
+User is prompted to pick a theme and a mad lib is generated based on the theme they pick.
+After a mad lib with blanks is generated, the user is prompted to fill in the blank with a specific part of speech. 
+Potential classes for parts of speech and themes. Possibly one mad lib super class  
+
+
+Classes:  
+
+1 for each theme 
+Blanks include noun, verb, adjective,  adverb , a number  
+Driver class – asks for input 
+Structure like the transportation lab 
+
+
+Mad libs themes ( everyone writes a story (maybe 2 paragraphs?(tbd)) for their theme) :  
+5 themes:  
+ 
+
+Thanksgiving - Zach 
+ 
+
+Christmas - Alexa  
+ 
+
+Halloween - Grace 
+ 
+
+4th of july -Othman 
+ 
+
+Easter - Brayden: 
