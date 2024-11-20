@@ -1,0 +1,15 @@
+Group project to do 
+
+- [ ]Halloween story (grace)
+- [ ] Christmas story (Alexa)
+- [ ] 4th of July story  (Othman)
+- [ ] Thanksgiving story (Zach)
+- [ ] Easter (Brayden) 
+- [ ] Make GUI 
+    - [ ] Welcome screen with 5 buttons for story options for user to choose madlib 
+    - [ ] Grid layout to enter parts of speech on left and text box fro word they choose on right
+    - [ ] Button on bottom to generate madlib 
+- [ ] Implement the logic into the controller file when GUI is made 
+- [ ] Test each story 
+- [ ] Make sure OOP is used 
+- [ ] Submit 
