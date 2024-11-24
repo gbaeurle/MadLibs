@@ -1,0 +1,36 @@
+.pane {
+    -fx-color: rgb(255, 0, 0);
+    -fx-background-color:rgb(48, 128, 18);
+
+}
+
+.header {
+    /* -fx-background-color:rgb(255, 232, 177); */
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    -fx-graphic: url('../imgs/tree.png');
+    /* -fx-color: rgb(255, 0, 0); */
+    /* -fx-font-color: orange; */
+}
+
+.inputbox {
+    -fx-background-color:rgb(188, 255, 177);
+}
+
+.next {
+    -fx-background-color:rgb(255, 0, 0);
+    -fx-color: blue;
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    /* -fx-font-color: rgb(255, 232, 177); */
+}
+
+.story {
+    /* -fx-background-color:rgb(255, 232, 177); */
+    -fx-font-family: 'papyrus', Courier, monospace;
+    /* -fx-font-size: 120%; */
+}
+
+.prompt {
+    -fx-background-color:black;
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    /* -fx-font-color: rgb(255, 232, 177); */
+}

@@ -1,0 +1,4 @@
+MadLibs/target/classes
+.DS_Store
+**/target
+*/**/target

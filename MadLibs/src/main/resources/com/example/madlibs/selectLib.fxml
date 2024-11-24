@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="101.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.madlibs.selectController">
    <children>
-      <Label layoutX="24.0" layoutY="1.0" maxWidth="1.7976931348623157E308" text="Please Select Your MadLib Below.">
+      <Label layoutX="24.0" layoutY="1.0" maxWidth="1.7976931348623157E308" styleClass="direct2" text="Please Select Your MadLib Below.">
          <font>
             <Font size="18.0" />
          </font>

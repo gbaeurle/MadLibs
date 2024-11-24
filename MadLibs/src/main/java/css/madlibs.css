@@ -1,0 +1,16 @@
+.root {
+    -fx-background-color:rgb(129, 188, 255);
+}
+
+.title {
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    fx-color: blue;
+}
+
+.direct {
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+}
+
+.direct2{
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+}

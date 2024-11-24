@@ -55,6 +55,7 @@ public class selectController {
         controller.setMadLibName(madLibName);
 
         Scene generateLibScene = new Scene(generateLibParent);
+        generateLibScene.getStylesheets().add(getClass().getResource("/css/" + madLibName + ".css").toExternalForm());
 
         Stage window;
         if (event.getSource() instanceof MenuItem) {
