@@ -1,0 +1,36 @@
+.pane {
+    -fx-color: rgb(255, 128, 0);
+    -fx-background-color:rgb(255, 179, 0);
+
+}
+
+.header {
+    /* -fx-background-color:rgb(255, 232, 177); */
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    -fx-graphic: url('../imgs/bat.png');
+    /* -fx-color: rgb(255, 0, 0); */
+    /* -fx-font-color: orange; */
+}
+
+.inputbox {
+    -fx-background-color:rgb(255, 128, 0);
+}
+
+.next {
+    -fx-background-color:rgb(0, 0, 0);
+    -fx-color: blue;
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    /* -fx-font-color: rgb(255, 232, 177); */
+}
+
+.story {
+    -fx-background-color:rgb(255, 232, 177);
+    -fx-font-family: 'Bradley Hand', Courier, monospace;
+    /* -fx-font-size: 120%; */
+}
+
+.prompt {
+    -fx-background-color:black;
+    -fx-font-family: 'Gill Sans', Courier, monospace;
+    /* -fx-font-color: rgb(255, 232, 177); */
+}

@@ -17,6 +17,8 @@ public class welcomeController {
     void toSelectMadLib(ActionEvent event) throws IOException {
         Parent selectLibParent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/madlibs/selectLib.fxml")));
         Scene selectLibScene = new Scene(selectLibParent);
+        selectLibScene.getStylesheets().add(getClass().getResource("/css/madlibs.css").toExternalForm());
+        selectLibScene.getStylesheets().add(getClass().getResource("/css/widgets.css").toExternalForm());
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(selectLibScene);
