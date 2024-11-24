@@ -1,43 +1,50 @@
 package com.example.madlibs;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class Halloween{
+public class Halloween implements MadLib {
 
-    public static void main(String[] args){
-        Scanner keyboardInput = new Scanner(System.in);
+    private final List<String> prompts;
 
-
-        //blanks (10)
-
-        System.out.println("Enter a noun (PERSON, PLACE, OR THING): ");
-        String noun = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj  = keyboardInput.nextLine();
-        System.out.println("Enter a creature (ex: GHOUL, UNICORN, MONSTER): ");
-        String creature = keyboardInput.nextLine();
-        System.out.println("Enter a verb ending in -s: ");
-        String sVerb = keyboardInput.nextLine();
-        System.out.println("Enter a plural noun: ");
-        String pNoun = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj2 = keyboardInput.nextLine();
-        System.out.println("Enter an animal: ");
-        String animal = keyboardInput.nextLine();
-        System.out.println("Enter an object: ");
-        String object = keyboardInput.nextLine();;
-        System.out.println("Enter an exclamation (ex: AH, WOW, BOO): ");
-        String exc = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj3 = keyboardInput.nextLine();
-
-
-        System.out.println("This Halloween might have been the spookiest yet! I dressed up as a(n) " + noun +  " and went to a Halloween party. At the party, someone told us a creepy story about a(n) " + adj + " " + creature +  " that " +sVerb+ "  (at) anyone who dares enter its territory.\n" +
-                "As we walked home, we could hear " + pNoun+ " moving in the darkness. Suddenly, a " +adj2 + " " + animal + " jumped out from behind a(n) " + object+ ", making us scream, " +exc + "!\"\n" +
-                "We sprinted all the way home and swore never to go near that " +adj3+  " place again!\n");
-        keyboardInput.close();
-
-
+    public Halloween() {
+        prompts = Arrays.asList(
+                "Enter an adjective: ",
+                "Enter a noun: ",
+                "Enter an adjective: ",
+                "Enter a noun (plural): ",
+                "Enter a verb: ",
+                "Enter a verb ending with -ing: ",
+                "Enter a noun: ",
+                "Enter a body part: ",
+                "Enter a noun ending with -ing: ",
+                "Enter an adjective: "
+        );
     }
 
+    public List<String> getPrompts() {
+        return prompts;
+    }
+
+    @Override
+    public String generateMadLib(List<String> userInputs) {
+        String adj1 = userInputs.get(0);
+        String noun1 = userInputs.get(1);
+        String adj2 = userInputs.get(2);
+        String pluralNoun = userInputs.get(3);
+        String verb1 = userInputs.get(4);
+        String verbIng = userInputs.get(5);
+        String noun2 = userInputs.get(6);
+        String bodyPart = userInputs.get(7);
+        String nounIng = userInputs.get(8);
+        String adj3 = userInputs.get(9);
+
+        return String.format("""
+        It was a %s Halloween night. The %s was shining in the sky. The air was filled with %s %s.\s
+        Kids were %s and %s down the streets, dressed in %s costumes.\s
+        As I walked through the neighborhood, I couldn't shake the feeling that someone was watching me.
+        Suddenly, I felt a tap on my %s. Turning around, I saw a %s %s.
+        It was the most %s Halloween I have ever experienced!
+       \s""", adj1, noun1, adj2, pluralNoun, verb1, verbIng, noun2, bodyPart, nounIng, nounIng, adj3);
+    }
 }

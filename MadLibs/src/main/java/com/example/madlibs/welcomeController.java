@@ -9,12 +9,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class welcomeController {
 
     @FXML
     void toSelectMadLib(ActionEvent event) throws IOException {
-        Parent selectLibParent = FXMLLoader.load(getClass().getResource("/com/example/madlibs/selectLib.fxml"));
+        Parent selectLibParent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/madlibs/selectLib.fxml")));
         Scene selectLibScene = new Scene(selectLibParent);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

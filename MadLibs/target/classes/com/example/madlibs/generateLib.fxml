@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -15,18 +14,11 @@
          <font>
             <Font size="14.0" />
          </font>
-         <content>
-            <Label layoutX="-5.0" layoutY="-5.0" rotate="-67.8" text="YERRRR" translateX="-20.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-         </content>
       </TitledPane>
       <TextArea fx:id="libText" editable="false" layoutY="200.0" prefHeight="200.0" prefWidth="600.0" text="Your Mad Lib Will Generate Here!" />
       <ListView fx:id="listWords" layoutY="29.0" prefHeight="172.0" prefWidth="248.0" />
       <TextField fx:id="enterWords" layoutX="348.0" layoutY="90.0" />
-      <Button fx:id="nextWordButton" layoutX="323.0" layoutY="153.0" mnemonicParsing="false" onAction="#nextWord" prefHeight="25.0" prefWidth="51.0" text="Next" />
-      <Button fx:id="createButton" layoutX="472.0" layoutY="153.0" mnemonicParsing="false" onAction="#printLib" text="Create" />
+      <Button fx:id="nextWordButton" layoutX="304.0" layoutY="153.0" mnemonicParsing="false" onAction="#nextWord" prefHeight="25.0" prefWidth="88.0" text="Next" />
+      <Button fx:id="replayButton" layoutX="453.0" layoutY="153.0" mnemonicParsing="false" onAction="#toReRun" prefHeight="25.0" prefWidth="88.0" text="Play Again!" />
    </children>
 </AnchorPane>

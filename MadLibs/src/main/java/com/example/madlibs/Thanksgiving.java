@@ -1,41 +1,55 @@
 package com.example.madlibs;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class Thanksgiving {
-    public static void main(String[] args) {
-        //prompts the user for the correct parts of speech
+public class Thanksgiving implements MadLib {
 
-        Scanner keyboardInput = new Scanner(System.in);
-        System.out.print("Please enter a noun: ");
-        String n1 = keyboardInput.nextLine();
-        System.out.print("Please enter an adjective: ");
-        String a2 = keyboardInput.nextLine();
-        System.out.print("Please enter a verb: ");
-        String v1 = keyboardInput.nextLine();
-        System.out.print("Please enter an adjective: ");
-        String a3 = keyboardInput.nextLine();
-        System.out.print("Please enter an adjective: ");
-        String a4 = keyboardInput.nextLine();
-        System.out.print("Please enter a verb: ");
-        String v2 = keyboardInput.nextLine();
-        System.out.print("Please enter a noun: ");
-        String n3 = keyboardInput.nextLine();
-        System.out.print("Please enter an adjective: ");
-        String a5 = keyboardInput.nextLine();
-        System.out.print("Please enter a verb: ");
-        String v3 = keyboardInput.nextLine();
-        System.out.print("Please enter an adjective: ");
-        String a6 = keyboardInput.nextLine();
-        System.out.println();
+    private final List<String> prompts;
 
-        //Returns the appropriate madlib with the words the user picked.
-        System.out.printf("""
-        This Thanksgiving, my family and I gathered around the table, excited for the big meal.
-        We started with a plate of %s, but it tasted a little %s. My Aunt tried to %s it to make it better,
-        but that only made it more %s! When the turkey came out, it looked %s, and everyone was eager to
-        %s it. But once we took a bite, we realized it tasted like %s! For dessert, Aunt Sally brought
-        out a %s pie that no one could %s. By the end of the night, we were all too %s to do anything
-        except laugh about our Thanksgiving surprise!""", n1, a2, v1, a3, a4, v2, n3, a5, v3, a6);
+    public Thanksgiving() {
+        prompts = Arrays.asList(
+                "Enter a noun: ",
+                "Enter an adjective: ",
+                "Enter a noun (animal): ",
+                "Enter a verb (present tense): ",
+                "Enter a verb (past tense): ",
+                "Enter a noun (plural): ",
+                "Enter a noun (food): ",
+                "Enter a verb ending with -ing: ",
+                "Enter an adjective: ",
+                "Enter a noun (natural feature): "
+        );
+    }
+
+    public List<String> getPrompts() {
+        return prompts;
+    }
+
+    @Override
+    public String generateMadLib(List<String> userInputs) {
+        if (userInputs.size() != prompts.size()) {
+            return "Error: Insufficient data to generate the story.";
+        }
+
+        String noun1 = userInputs.get(0);
+        String adjective1 = userInputs.get(1);
+        String animal1 = userInputs.get(2);
+        String verbPresent = userInputs.get(3);
+        String verbPast = userInputs.get(4);
+        String pluralNoun = userInputs.get(5);
+        String food = userInputs.get(6);
+        String verbIng = userInputs.get(7);
+        String adjective2 = userInputs.get(8);
+        String naturalFeature = userInputs.get(9);
+
+        return String.format("""
+        Last Thanksgiving, we celebrated with a large %s. The day was filled with %s activities.\s
+        We saw a %s %s in the backyard, which made everyone %s.\s
+        After we ate our dinner, we sat down to enjoy some classic %s.\s
+        The best part was the delicious %s that my grandmother made.\s
+        Everyone couldn't stop %s about how %s it was.\s
+        As the sun set behind the %s, we all felt thankful for another wonderful Thanksgiving.
+       \s""", noun1, adjective1, animal1, verbPresent, verbPast, pluralNoun, food, verbIng, adjective2, naturalFeature);
     }
 }

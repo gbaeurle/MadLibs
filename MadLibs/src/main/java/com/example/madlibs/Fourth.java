@@ -1,39 +1,48 @@
 package com.example.madlibs;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class Fourth {
+public class Fourth implements MadLib {
+    private final List<String> prompts;
 
-    public static void main(String[] args)
-    {
-        Scanner keyboardInput = new Scanner(System.in);
+    public Fourth() {
+        prompts = Arrays.asList(
+                "Enter an adjective: ",
+                "Enter an adjective: ",
+                "Enter a noun: ",
+                "Enter an adjective (try a number!): ",
+                "Enter a noun: ",
+                "Enter a noun: ",
+                "Enter a verb: ",
+                "Enter a noun (maybe a color?): ",
+                "Enter a noun (animal): ",
+                "Enter an adjective: "
+        );
+    }
 
-        // 10 blanks
+    public List<String> getPrompts() {
+        return prompts;
+    }
 
-        System.out.println("Enter an adjective: ");
-        String adj1 = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj2 = keyboardInput.nextLine();
-        System.out.println("Enter an noun: ");
-        String noun1 = keyboardInput.nextLine();
-        System.out.println("Enter an adjective (try a number!): ");
-        String adj3 = keyboardInput.nextLine();
-        System.out.println("Enter a noun: ");
-        String noun2 = keyboardInput.nextLine();
-        System.out.println("Enter an noun: ");
-        String noun3 = keyboardInput.nextLine();
-        System.out.println("Enter a verb: ");
-        String verb1 = keyboardInput.nextLine();
-        System.out.println("Enter a noun (maybe a color?): ");
-        String noun4 = keyboardInput.nextLine();
-        System.out.println("Enter a noun (animal): ");
-        String noun5 = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj4 = keyboardInput.nextLine();
+    @Override
+    public String generateMadLib(List<String> userInputs) {
+        String adj1 = userInputs.get(0);
+        String adj2 = userInputs.get(1);
+        String noun1 = userInputs.get(2);
+        String adj3 = userInputs.get(3);
+        String noun2 = userInputs.get(4);
+        String noun3 = userInputs.get(5);
+        String verb1 = userInputs.get(6);
+        String noun4 = userInputs.get(7);
+        String noun5 = userInputs.get(8);
+        String adj4 = userInputs.get(9);
 
-
-        System.out.println("On the " + adj1 + " morning of the 4th of July, we decided to throw the " + adj2 + " party of the century . We packed a " + noun1 + " and " + adj3 + " hot dogs. " +
-                " As we arrived at the park, we realized we had forgotten to bring a " + noun2 + " so we had to improvise with a " + noun3 + " Everyone started " + verb1 + " and  " + verb1 + " and before long, the sky turned " + noun4 + " with fireworks. Suddenly, a " + noun5 + " ran by and scared everyone, causing a panic. People were running in all directions, while someone yelled, get the " + noun5 + "! By the end of the night, we were all feeling " + adj4 + " but happy we survived the most " + adj1 + " 4th of July ever!");
-        keyboardInput.close();
+        return String.format("""
+        On the %s morning of the 4th of July, we decided to throw the %s party of the century. We packed a %s and %s hot dogs.\s
+        As we arrived at the park, we realized we had forgotten to bring a %s, so we had to improvise with a %s.\s
+        Everyone started %s, and before long, the sky turned %s with fireworks. Suddenly, a %s ran by and scared everyone, causing a panic.\s
+        People were running in all directions, while someone yelled, "get the %s!" By the end of the night, we were all feeling %s but happy we survived the most %s 4th of July ever!
+       \s""", adj1, adj2, noun1, adj3, noun2, noun3, verb1, noun4, noun5, noun5, adj4, adj1);
     }
 }

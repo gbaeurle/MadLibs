@@ -1,37 +1,48 @@
 package com.example.madlibs;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class Christmas{
+public class Christmas implements MadLib{
+    private final List<String> prompts;
 
-    public static void main(String[] args)
-    {
-        Scanner keyboardInput = new Scanner(System.in);
+    public Christmas(){
+        prompts = Arrays.asList(
+                "Enter a time: ",
+                "Enter a plural noun: ",
+                "Enter an adjective: ",
+                "Enter a noun: ",
+                "Enter a name: ",
+                "Enter an adjective: ",
+                "Enter a song: ",
+                "Enter an adjective: ",
+                "Enter a food: ",
+                "Enter a number: "
+        );
+    }
 
-        System.out.println("Enter a time: ");
-        String time = keyboardInput.nextLine();
-        System.out.println("Enter a plural noun: ");
-        String pnoun = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adjective = keyboardInput.nextLine();
-        System.out.println("Enter a noun: ");
-        String noun = keyboardInput.nextLine();
-        System.out.println("Enter a name: ");
-        String name = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj = keyboardInput.nextLine();
-        System.out.println("Enter a song: ");
-        String song = keyboardInput.nextLine();
-        System.out.println("Enter an adjective: ");
-        String adj2 = keyboardInput.nextLine();
-        System.out.println("Enter a food: ");
-        String food = keyboardInput.nextLine();
-        System.out.println("Enter a number: ");
-        int num = keyboardInput.nextInt();
+    public List<String> getPrompts() {
+        return prompts;
+    }
 
+    @Override
+    public String generateMadLib(List<String> userInputs) {
+        String time = userInputs.get(0);
+        String pnoun = userInputs.get(1);
+        String adjective1 = userInputs.get(2);
+        String noun = userInputs.get(3);
+        String name = userInputs.get(4);
+        String adjective2 = userInputs.get(5);
+        String song = userInputs.get(6);
+        String adjective3 = userInputs.get(7);
+        String food = userInputs.get(8);
+        String num = userInputs.get(9);
 
-        System.out.println("It was " + time + " on Christmas morning when I walked into the family room. My family was already there to open " + pnoun + ". I couldn't help but notice a " + adjective + " " + noun + " sitting in the middle of the room. " + 
-        name + " was " + adj + " about it. We always sing " + song + " before opening " + pnoun + ". It is always a " + adj2 + " time with my family. " + name + " revealed that the " + noun + " was actually made out of " + food + "! Everyone loved it so much, we ate the whole thing in less than " + num + " hours. Best Christmas ever!");
-        keyboardInput.close();
+        return String.format("""
+       It was %s on Christmas morning when I walked into the family room. My family was already there to open %s. I couldn't help but notice a\s
+       %s %s sitting in the middle of the room. %s was %s about it. We always sing %s before opening %s. It is always a\s
+       %s time with my family. %s revealed that the %s was actually made out of %s! Everyone loved it so much, we ate the whole thing in less than\s
+       %s hours. Best Christmas ever!
+      \s""", time, pnoun, adjective1, noun, name, adjective2, song, pnoun, adjective3, name, noun, food, num);
     }
 }

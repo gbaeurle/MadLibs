@@ -37,7 +37,7 @@ public class selectController {
 
     @FXML
     void julyAction(ActionEvent event) throws IOException {
-        passDataAndChangeScene(event, "July");
+        passDataAndChangeScene(event, "Fourth");
 
     }
 
